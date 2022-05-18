@@ -115,11 +115,14 @@ def net():
             msg, addrInfo = s.recvfrom(1024)
             msg = msg.decode('utf-8')
             print(msg, addrInfo)
-            if msg.split(':')[0] == 'J':
+            msg0 = msg.split(':')[0]
+            if msg0 == 'J':
                 if not gameOver:
                     if not startGame:
                         startGame = True
                     player.startJump()
+            elif msg0 == 'F':
+                restart()
         except socket.timeout:
             pass
         if not running:
