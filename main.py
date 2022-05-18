@@ -191,7 +191,7 @@ def main():
                             startGame = True
                         player.startJump()
                 elif event.key == pygame.K_F5:
-                    pass
+                    restart()
             elif event.type == NEW_OBSTACLE and startGame and not gameOver:
                 newOb = newObstacle(image)
                 obstacles.add(newOb)
