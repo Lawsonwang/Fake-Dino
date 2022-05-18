@@ -166,7 +166,6 @@ def main():
 
     horizon = Horizon(0, horizonYPos + dy, image)
     player = Trex(40, trexYPos + dy, image)
-    # horizon2 = Horizon(2400, 127 + dy, image)
 
     running = True
 
@@ -253,5 +252,3 @@ if __name__ == '__main__':
     t2.start()
     main()
     
-    # t1 = threading.Thread(target=main)
-    # t1.start()
