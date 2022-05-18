@@ -152,12 +152,17 @@ def restart():
 # Main
 def main():
     global width, height, running, player, startGame, gameOver, dy, obstacles, obstaclesList, score, scoreCnt, NEW_OBSTACLE
+
+    showDotHelper = False
+
     startGame = False
     gameOver = False
     pygame.init()
     size = width, height = 1600, 400
     screen = pygame.display.set_mode(size)
-    pygame.display.set_caption("Demo")
+    icon = pygame.image.load("200-error-offline.png")
+    pygame.display.set_icon(icon)
+    pygame.display.set_caption("Dino")
     clock = pygame.time.Clock()
     BLACK = (0, 0, 0)
     WHITE = (255, 255, 255)
@@ -229,7 +234,7 @@ def main():
         for each in obstacles:
             screen.blit(each.img, each.rect)
         screen.blit(player.img, player.rect)
-        if not gameOver:
+        if not gameOver and showDotHelper:
             pygame.draw.circle(screen, (0, 0, 0), (player.rect.centerx + 200, player.rect.centery), 3, 0)
 
         temp = score
